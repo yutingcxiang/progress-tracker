@@ -1,0 +1,11 @@
+<h3>Study Session Info</h3>
+<h4>Date: <%= @study_session.date %></h4>
+<h4>Hours Studied: <%= @study_session.hours %></h3>
+<p>Summary: <%= @study_session.summary %></p>
+
+<a href="/study_sessions/<%=@study_session.id%>/edit">Edit Study Session</a>
+
+<form action="/study_sessions/<%=@study_session.id%>" method="POST">
+  <input type="hidden" id="hidden" name="_method" value="delete">
+  <input type="submit" id="submit" value="Delete Study Session">
+</form>
