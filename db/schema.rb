@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(version: 20180829104631) do
 
   create_table "study_sessions", force: :cascade do |t|
     t.date    "date"
-    t.string  "section_name"
-    t.string  "item"
     t.decimal "hours"
+    t.string  "summary"
     t.integer "user_id"
   end
 
