@@ -3,7 +3,8 @@
     <input id="hidden" type="hidden" name="_method" value="PATCH">
     Date: <input type="text" name="date" id="date" value=<%= @study_session.date %>><br>
     Hours Studied: <input type="text" name="hours" id="hours" value=<%= @study_session.hours %>><br>
-    What did you learn? <input type="text" name="summary" id="summary" value=<%= @study_session.summary %>><br>
+    What did you learn? <br>
+    <textarea name="summary" rows="10" cols="30" id="summary"><%= @study_session.summary %></textarea>
     <br>
     <input type="submit" id="submit" value="Update">
   </form>
@@ -13,4 +14,6 @@
     <input type="submit" id="submit" value="Delete">
   </form>
 
-  <a href="/study_sessions"><input class="btn" type="button" value="Return to All Study Sessions"></a>
+    <a href="/study_sessions/new_study_session"><input class="btn" type="button" value="New Study Session"></a>
+    <br>
+    <a href="/my_study_sessions"><input class="btn" type="button" value="Return to All Study Sessions"></a>

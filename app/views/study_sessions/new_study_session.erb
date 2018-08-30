@@ -2,9 +2,10 @@
   <form action="/study_sessions" method="POST">
     Date: <input type="text" name="date" id="date"><br>
     Hours Studied: <input type="text" name="hours" id="hours"><br>
-    What did you learn? <input type="text" name="summary" id="summary"><br>
+    What did you learn? <br>
+    <textarea name="summary" rows="10" cols="30" id="summary"> </textarea>
     <br>
     <input type="submit" id="submit" value="Create Session">
   </form>
 
-  <a href="/study_sessions"><input class="btn" type="button" value="Return to All Study Sessions"></a>
+  <a href="/my_study_sessions"><input class="btn" type="button" value="Return to All Study Sessions"></a>
