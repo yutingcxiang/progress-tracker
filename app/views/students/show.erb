@@ -1,8 +1,0 @@
-<h2>Hello,<%= @student.name %>!</h2>
-<h3>Here is your progress so far:</h3>
-
-<% @student.study_sessions.each do |study_session| %>
-    <h4><%= study_session.date %></h4>
-    <p><%= study_sessions.hours %><p>
-    <p><%= study_session.summary %></p>
-<% end %>
