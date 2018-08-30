@@ -1,0 +1,13 @@
+<h2>Welcome, <%= current_user.name %></h2>
+<h3>All Study Sessions:</h3>
+
+<% @study_sessions.each do |study_session| %>
+  <h4><%= study_session.date %></h4>
+  <p><%= study_sessions.hours %><p>
+  <p><%= study_session.summary %></p>
+<% end %>
+
+<% if logged_in? %>
+  <a href="/study_sessions/new_study_session">New Study Session</a>
+  <a href="/logout">Log Out</a>
+<% end>
