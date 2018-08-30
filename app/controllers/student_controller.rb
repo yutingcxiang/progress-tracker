@@ -1,7 +1,8 @@
 class StudentController < ApplicationController
   get '/my_study_sessions' do
     if logged_in?
-      @student= Student.find_by(id: params[:id])
+      @student = Student.find_by(id: params[:id])
+            binding.pry
       erb :'students/my_study_sessions'
     end
   end
