@@ -30,7 +30,7 @@ class StudySessionController < ApplicationController
   get '/study_sessions/:id' do
     if logged_in?
       @study_session = Study_session.find_by(id: params[:id])
-      erb :'study_sessions/study_session'
+      erb :'study_sessions/show_study_session'
     else
       redirect '/login'
     end
