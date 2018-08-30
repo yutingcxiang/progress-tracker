@@ -17,9 +17,9 @@ class StudentController < ApplicationController
   end
 
   post '/login' do
-    @student = Student.find_by(id: params[:user_id])
+    @student = Student.find_by(id: params[:student_id])
     if @student && @student.authenticate(params[:password])
-      session[:id] = @student.id
+      session[:student_id] = @student.id
       redirect '/study_sessions'
     else
       redirect '/students/login'
@@ -34,9 +34,9 @@ class StudentController < ApplicationController
   end
 
   post '/signup' do
-    @student = Student.create(name: params[:name], email: params[:email], username: params[:username], password: params[:password])
+    @student = Student.new(name: params[:name], email: params[:email], username: params[:username], password: params[:password])
     if @student.save
-      session[:user_id] = @student.id
+      session[:student_id] = @student.id
       redirect '/study_sessions'
     else
       redirect '/signup'
