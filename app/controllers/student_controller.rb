@@ -37,7 +37,7 @@ class StudentController < ApplicationController
     @student = Student.create(name: params[:name], email: params[:email], username: params[:username], password: params[:password])
     if @student.save
       session[:user_id] = @student.id
-      redirect '/study_sessions
+      redirect '/study_sessions'
     else
       redirect '/signup'
     end
