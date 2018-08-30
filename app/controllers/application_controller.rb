@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
   helpers do
     def current_student
 			if session[:user_id]
-			  Student.find_by_id(session[:student_id])
+			  Student.find_by_id(session[:user_id])
 			end
 		end
 

@@ -1,8 +1,7 @@
 class StudentController < ApplicationController
   get '/my_study_sessions' do
     if logged_in?
-      redirect '/my_study_sessions'
-    else
+      @student= Student.find_by(id: params[:id])
       erb :'students/my_study_sessions'
     end
   end

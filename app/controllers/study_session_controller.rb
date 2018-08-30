@@ -1,7 +1,6 @@
 class StudySessionController < ApplicationController
   get '/study_sessions' do
     if logged_in?
-      @study_sessions = Study_session.all
       erb :'study_sessions/study_session'
     else
       redirect '/login'
