@@ -46,9 +46,27 @@ class StudySessionController < ApplicationController
   end
 
   patch '/study_sessions/:id' do
+    @study_session = Study_session.find_by(id: params[:id])
+    if logged_in?
+      @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
+      @study_session.student = current_student
+      @study_session.save
+      redirect "/study_sessions/#{@study_session.id}"
+    else
+      redirect '/login'
+    end
   end
 
   delete '/study_sessions/:id/delete' do
+    @study_session = Study_session.find_by(id: params[:id])
+    if logged_in?
+      if @study_session && @study_session.student == current_student
+        @study_session.delete
+      end
+      redirect '/study_sessions'
+    else
+      redirect '/login'
+    end
   end
 
 end

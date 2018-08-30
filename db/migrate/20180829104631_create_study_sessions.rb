@@ -4,7 +4,7 @@ class CreateStudySessions < ActiveRecord::Migration
       t.date :date
       t.decimal :hours
       t.string :summary
-      t.integer :user_id
+      t.integer :student_id
     end
   end
 end
