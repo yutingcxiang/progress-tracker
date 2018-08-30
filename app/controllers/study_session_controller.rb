@@ -57,7 +57,7 @@ class StudySessionController < ApplicationController
     end
   end
 
-  delete '/study_sessions/:id/delete' do
+  delete '/study_sessions/:id' do
     @study_session = Study_session.find_by(id: params[:id])
     if logged_in?
       if @study_session && @study_session.student == current_student

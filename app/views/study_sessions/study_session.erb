@@ -1,5 +1,5 @@
 <h2>Welcome, <%= current_student.name %>!</h2>
-<h3>Here are your study sessions:</h3>
+<h4>Here are your study sessions:</h4>
 
 <br>
 
@@ -9,7 +9,7 @@
     <p>Date: <%= study_session.date %></p>
     <p>Hours Studied: <%= study_session.hours %><p>
     <p>Learned: <%= study_session.summary %></p>
-    <a href="/study_sessions/<%= study_session.id %>">Edit</a>
+    <a href="/study_sessions/<%= study_session.id %>"><input class="btn" type="button" value="Edit"></a>
     <hr>
   <div>
     <br>
