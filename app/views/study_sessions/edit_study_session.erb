@@ -1,7 +1,8 @@
 <h3>Edit Study Session Details</h3>
   <form action="/study_sessions/<%= @study_session.id %>" method="POST">
-    Date: <input type="text" name="date" id="date" value=<%= @study_session.date %>>
-    Hours Studied: <input type="text" name="hours" id="hours" value=<%= @study_session.hours %>>
-    What did you learn? <input type="text" name="summary" id="summary" value=<%= @study_session.summary %>>
+    Date: <input type="text" name="date" id="date" value=<%= @study_session.date %>><br>
+    Hours Studied: <input type="text" name="hours" id="hours" value=<%= @study_session.hours %>><br>
+    What did you learn? <input type="text" name="summary" id="summary" value=<%= @study_session.summary %>><br>
+    <br>
     <input type="submit" id="submit" value="Edit Study Session">
   </form>

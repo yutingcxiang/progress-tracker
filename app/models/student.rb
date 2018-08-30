@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  has_many :sections
+  has_many :study_sessions
   has_secure_password
   validates_presence_of :name, :username, :password, :email
 

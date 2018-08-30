@@ -12,7 +12,7 @@ class StudentController < ApplicationController
     if logged_in?
       redirect '/study_sessions'
     else
-      redirect '/signup'
+      erb :'students/login'
     end
   end
 
@@ -28,7 +28,7 @@ class StudentController < ApplicationController
 
   get '/signup' do
     if logged_in?
-      redirect :'/study_sessions/study_session'
+      redirect '/study_sessions'
     else
       erb :'students/signup'
     end
