@@ -12,7 +12,7 @@ class StudentController < ApplicationController
     if logged_in?
       redirect '/study_sessions'
     else
-      redirect '/students/signup'
+      redirect '/signup'
     end
   end
 
@@ -22,7 +22,8 @@ class StudentController < ApplicationController
       session[:student_id] = @student.id
       redirect '/study_sessions'
     else
-      redirect '/students/login'
+      redirect '/login'
+    end
   end
 
   get '/signup' do
