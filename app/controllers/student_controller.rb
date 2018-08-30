@@ -1,4 +1,12 @@
 class StudentController < ApplicationController
+  get '/my_study_sessions' do
+    if logged_in?
+      redirect '/my_study_sessions'
+    else
+      erb :'students/my_study_sessions'
+    end
+  end
+
   get '/login' do
     if logged_in?
       redirect '/study_sessions'
@@ -8,9 +16,9 @@ class StudentController < ApplicationController
   end
 
   post '/login' do
-    @student = Student.find_by(id: params[:student_id])
+    @student = Student.find_by(username: params[:username])
     if @student && @student.authenticate(params[:password])
-      session[:student_id] = @student.id
+      session[:user_id] = @student.id
       redirect '/study_sessions'
     else
       redirect '/login'
@@ -28,7 +36,7 @@ class StudentController < ApplicationController
   post '/signup' do
     @student = Student.new(name: params[:name], email: params[:email], username: params[:username], password: params[:password])
     if @student.save
-      session[:student_id] = @student.id
+      session[:user_id] = @student.id
       redirect '/study_sessions'
     else
       redirect '/signup'
