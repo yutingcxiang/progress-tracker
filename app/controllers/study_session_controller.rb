@@ -23,7 +23,7 @@ class StudySessionController < ApplicationController
       @study_session = Study_session.new(date: params[:date], hours: params[:hours], summary: params[:summary])
       @study_session.student = current_student
       @study_session.save
-      redirect "/study_sessions"
+      redirect "/study_sessions/#{@study_session.id}"
     end
   end
 
@@ -53,7 +53,7 @@ class StudySessionController < ApplicationController
       @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
       @study_session.student = current_student
       @study_session.save
-      redirect "/study_sessions"
+      redirect "/study_sessions/#{@study_session.id}"
     end
   end
 
