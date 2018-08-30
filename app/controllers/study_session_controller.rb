@@ -1,7 +1,7 @@
 class StudySessionController < ApplicationController
   get '/study_sessions' do
     if logged_in?
-      erb :'study_sessions/study_session'
+      erb :'study_sessions/study_sessions'
     else
       redirect '/login'
     end
@@ -19,7 +19,7 @@ class StudySessionController < ApplicationController
     if params[:date].empty? || params[:hours].empty? || params[:summary].empty?
       redirect '/study_sessions/new_study_session'
     else
-      @study_session = Study_session.new(date: params[:date], hours: params[:hours], summary: params[:summary])
+      @study_session = StudySession.new(date: params[:date], hours: params[:hours], summary: params[:summary])
       @study_session.student = current_student
       @study_session.save
       redirect "/study_sessions/#{@study_session.id}"
@@ -28,7 +28,7 @@ class StudySessionController < ApplicationController
 
   get '/study_sessions/:id' do
     if logged_in?
-      @study_session = Study_session.find_by(id: params[:id])
+      @study_session = StudySession.find_by(id: params[:id])
       erb :'study_sessions/show_study_session'
     else
       redirect '/login'
@@ -37,7 +37,7 @@ class StudySessionController < ApplicationController
 
   get '/study_sessions/:id/edit' do
     if logged_in?
-      @study_session = Study_session.find_by(id: params[:id])
+      @study_session = StudySession.find_by(id: params[:id])
       erb :'study_sessions/edit_study_session'
     else
       redirect '/login'
@@ -48,17 +48,16 @@ class StudySessionController < ApplicationController
     if params[:date].empty? || params[:hours].empty? || params[:summary].empty?
       redirect "/study_sessions/#{@study_session.id}/edit"
     else
-      @study_session = Study_session.find_by(id: params[:id])
+      @study_session = StudySession.find_by(id: params[:id])
       @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
       @study_session.student = current_student
       @study_session.save
-      binding.pry
       redirect "/study_sessions/#{@study_session.id}"
     end
   end
 
   delete '/study_sessions/:id' do
-    @study_session = Study_session.find_by(id: params[:id])
+    @study_session = StudySession.find_by(id: params[:id])
     if logged_in?
       if @study_session && @study_session.student == current_student
         @study_session.delete

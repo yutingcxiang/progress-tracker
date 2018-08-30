@@ -3,13 +3,13 @@
 
 <br>
 
-<% Study_session.all.each do |study_session| %>
+<% StudySession.all.each do |study_session| %>
   <div>
     <hr>
+    <p>Name: <%= study_session.student.name %></p>
     <p>Date: <%= study_session.date %></p>
     <p>Hours Studied: <%= study_session.hours %><p>
     <p>Learned: <%= study_session.summary %></p>
-    <a href="/study_sessions/<%= study_session.id %>"><input class="btn" type="button" value="Edit"></a>
     <hr>
   <div>
     <br>
