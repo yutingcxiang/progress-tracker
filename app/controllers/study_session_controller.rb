@@ -1,5 +1,4 @@
 class StudySessionController < ApplicationController
-  use Rack::Flash
 
   get '/study_sessions' do
     if logged_in?
