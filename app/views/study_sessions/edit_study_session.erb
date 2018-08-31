@@ -1,3 +1,7 @@
+<% if flash[:message] %>
+  <h6><%= flash[:message] %></h6>
+<% end %>
+
 <h3>Edit Study Session Details</h3>
   <form action="/study_sessions/<%= @study_session.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="PATCH">

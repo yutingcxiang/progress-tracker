@@ -1,4 +1,8 @@
-<h2>Welcome, <%= current_student.name %>!</h2>
+<% if flash[:message] %>
+<h6><%= flash[:message] %></h6>
+<% end %>
+
+<h2>Hello, <%= current_student.name %>!</h2>
 <h4>Here are your study sessions:</h4>
 
 <br>

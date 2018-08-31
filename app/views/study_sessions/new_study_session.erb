@@ -1,3 +1,7 @@
+<% if flash[:message] %>
+  <h6><%= flash[:message] %></h6>
+<% end %>
+
 <h3>Enter New Study Session Details</h3>
   <form action="/study_sessions" method="POST">
     Date: <input type="text" name="date" id="date"><br>
