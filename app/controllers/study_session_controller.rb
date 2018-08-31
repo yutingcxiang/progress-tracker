@@ -39,8 +39,8 @@ class StudySessionController < ApplicationController
 
   get '/study_sessions/:id/edit' do
     if logged_in?
-      erb :'study_sessions/edit_study_session'
       @study_session = StudySession.find_by(id: params[:id])
+      erb :'study_sessions/edit_study_session'
     else
       redirect '/login'
     end
