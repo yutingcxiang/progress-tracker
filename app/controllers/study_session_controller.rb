@@ -24,6 +24,7 @@ class StudySessionController < ApplicationController
       @study_session = StudySession.new(date: params[:date], hours: params[:hours], summary: params[:summary])
       @study_session.student = current_student
       @study_session.save
+      flash[:message] = "Success. Study session created."
       redirect "/study_sessions/#{@study_session.id}"
     end
   end
