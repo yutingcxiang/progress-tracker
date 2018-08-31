@@ -59,7 +59,7 @@ class StudySessionController < ApplicationController
         @study_session.save
         redirect "/study_sessions/#{@study_session.id}"
       else
-        redirect "/study_sessions"
+        redirect "/my_study_sessions"
       end
     end
   end
