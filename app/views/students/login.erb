@@ -5,3 +5,7 @@
   <br>
 <input type="submit" id="submit" value="Log In">
 </form>
+
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>

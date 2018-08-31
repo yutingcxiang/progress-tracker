@@ -7,3 +7,7 @@
   <br>
 <input type="submit" id="submit" value="Sign Up">
 </form>
+
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>

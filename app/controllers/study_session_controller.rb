@@ -1,4 +1,6 @@
 class StudySessionController < ApplicationController
+  use Rack::Flash
+
   get '/study_sessions' do
     if logged_in?
       erb :'study_sessions/study_sessions'
@@ -18,6 +20,7 @@ class StudySessionController < ApplicationController
   post '/study_sessions' do
     if params[:date].empty? || params[:hours].empty? || params[:summary].empty?
       redirect '/study_sessions/new_study_session'
+      flash[:message] = "Error. Please fill out all fields and try again."
     else
       @study_session = StudySession.new(date: params[:date], hours: params[:hours], summary: params[:summary])
       @study_session.student = current_student
@@ -47,6 +50,7 @@ class StudySessionController < ApplicationController
   patch '/study_sessions/:id' do
     if params[:date].empty? || params[:hours].empty? || params[:summary].empty?
       redirect "/study_sessions/#{@study_session.id}/edit"
+      flash[:message] = "Error. Please fill out all fields and try again."
     else
       if @study_session && @study_session.student.id == curent_student.id
         @study_session = StudySession.find_by(id: params[:id])
@@ -67,6 +71,7 @@ class StudySessionController < ApplicationController
         @study_session.delete
       end
       redirect '/study_sessions'
+      flash[:message] = "Success. Study session has been deleted."
     else
       redirect '/login'
     end

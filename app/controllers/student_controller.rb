@@ -1,4 +1,6 @@
 class StudentController < ApplicationController
+  use Rack::Flash
+
   get '/my_study_sessions' do
     if logged_in?
       erb :'students/my_study_sessions'
@@ -19,6 +21,7 @@ class StudentController < ApplicationController
       session[:user_id] = @student.id
       redirect '/my_study_sessions'
     else
+      flash[:message] = "Login unsuccessful. Please try again."
       redirect '/login'
     end
   end
@@ -37,6 +40,7 @@ class StudentController < ApplicationController
       session[:user_id] = @student.id
       redirect '/my_study_sessions'
     else
+      flash[:message] = "Signup unsuccessful. Please try again."
       redirect '/signup'
     end
   end
