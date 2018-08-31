@@ -4,19 +4,13 @@ For learn.co students to track their hours and completed work for each of their 
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Run this command:
 
-```ruby
-gem 'progress_tracker'
-```
-
-And then execute:
-
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
-    $ gem install progress_tracker
+    $ shotgun
 
 ## Usage
 
