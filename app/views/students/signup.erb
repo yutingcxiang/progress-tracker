@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h3>Sign Up</h3>
 <form action='/signup' method="POST">
   Name: <input type="text" name="name" id="name"><br>
@@ -7,7 +11,3 @@
   <br>
 <input type="submit" id="submit" value="Sign Up">
 </form>
-
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>

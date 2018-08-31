@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h3>Enter New Study Session Details</h3>
   <form action="/study_sessions" method="POST">
     Date: <input type="text" name="date" id="date"><br>
@@ -9,7 +13,3 @@
   </form>
 
   <a href="/my_study_sessions"><input class="btn" type="button" value="Return to All Study Sessions"></a>
-
-  <% if flash.has?(:message) %>
-    <%= flash[:message] %>
-  <% end %>
