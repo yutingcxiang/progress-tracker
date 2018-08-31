@@ -48,11 +48,15 @@ class StudySessionController < ApplicationController
     if params[:date].empty? || params[:hours].empty? || params[:summary].empty?
       redirect "/study_sessions/#{@study_session.id}/edit"
     else
-      @study_session = StudySession.find_by(id: params[:id])
-      @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
-      @study_session.student = current_student
-      @study_session.save
-      redirect "/study_sessions/#{@study_session.id}"
+      if @study_session && @study_session.student.id == curent_student.id
+        @study_session = StudySession.find_by(id: params[:id])
+        @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
+        @study_session.student = current_student
+        @study_session.save
+        redirect "/study_sessions/#{@study_session.id}"
+      else
+        redirect "/study_sessions"
+      end
     end
   end
 
