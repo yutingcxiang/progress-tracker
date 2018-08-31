@@ -71,7 +71,7 @@ class StudySessionController < ApplicationController
         @study_session.delete
       end
       flash[:message] = "Success. Study session has been deleted."
-      redirect '/study_sessions'
+      redirect '/my_study_sessions'
     else
       redirect '/login'
     end
