@@ -1,6 +1,6 @@
 # Learn.co Progress Tracker
 
-For learn.co students to track their hours and completed work for each section throughout their learning process.
+For learn.co students to track their hours and completed work for each of their study sessions throughout their curriculum.
 
 ## Installation
 
