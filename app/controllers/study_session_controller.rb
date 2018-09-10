@@ -8,7 +8,7 @@ class StudySessionController < ApplicationController
     end
   end
 
-  get '/study_sessions/new_study_session' do
+  get '/study_sessions/new' do
     if logged_in?
       erb :'study_sessions/new_study_session'
     else
