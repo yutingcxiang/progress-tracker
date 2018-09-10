@@ -54,11 +54,15 @@ class StudySessionController < ApplicationController
       flash[:message] = "Error. Please fill out all fields and try again."
       redirect "/study_sessions/#{@study_session.id}/edit"
     else
-      @study_session = StudySession.find_by(id: params[:id])
-      @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
-      @study_session.student = current_student
-      @study_session.save
-      redirect "/study_sessions/#{@study_session.id}"
+      if params[:id] == current_study_session.id
+        @study_session = StudySession.find_by(id: params[:id])
+        @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
+        @study_session.student = current_student
+        @study_session.save
+        redirect "/study_sessions/#{@study_session.id}"
+      else
+        redirect '/my_study_sessions'
+      end
     end
   end
 

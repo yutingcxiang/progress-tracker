@@ -24,6 +24,10 @@ class ApplicationController < Sinatra::Base
 		def logged_in?
 			!!current_student
 		end
+
+    def current_study_session
+      @study_session = StudySession.find_by(id: params[:id])
+    end
 	end
 
 end
