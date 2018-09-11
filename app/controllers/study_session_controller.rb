@@ -41,6 +41,7 @@ class StudySessionController < ApplicationController
   get '/my_study_sessions/:id/edit' do
     if logged_in?
       @study_session = StudySession.find_by(id: params[:id])
+      session[:study_session_id] = @study_session.id
       if @study_session && @study_session.student.id == current_student.id
         erb :'study_sessions/edit_study_session'
       else
@@ -54,8 +55,9 @@ class StudySessionController < ApplicationController
       flash[:message] = "Error. Please fill out all fields and try again."
       redirect "/my_study_sessions/#{@study_session.id}/edit"
     else
-      if params[:id] == current_study_session.id
-        @study_session = StudySession.find_by(id: params[:id])
+      @study_session = StudySession.find_by(id: params[:id])
+      binding.pry
+      if params[:id].to_i == current_study_session
         @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
         @study_session.student = current_student
         @study_session.save
