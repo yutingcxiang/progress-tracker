@@ -13,7 +13,7 @@
     <p>Date: <%= study_session.date %></p>
     <p>Hours Studied: <%= study_session.hours %><p>
     <p>Learned: <%= study_session.summary %></p>
-    <a href="/study_sessions/<%= study_session.id %>"><input class="btn" type="button" value="Edit"></a>
+    <a href="/my_study_sessions/<%= study_session.id %>"><input class="btn" type="button" value="Edit"></a>
     <hr>
   <div>
     <br>
@@ -22,6 +22,6 @@
 <br>
 
 <% if logged_in? %>
-  <a href="/study_sessions/new_study_session"><input class="btn" type="button" value="New Study Session"></a>
+  <a href="/my_study_sessions/new"><input class="btn" type="button" value="New Study Session"></a>
   <a href="/logout"><input class="btn" type="button" value="Log Out"></a>
 <% end %>

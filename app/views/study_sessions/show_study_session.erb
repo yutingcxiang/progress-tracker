@@ -10,11 +10,13 @@
 <p>Summary: <%= @study_session.summary %></p>
 <hr>
 
-<a href="/study_sessions/<%=@study_session.id%>/edit"><input class="btn" type="button" value="Edit"></a>
+<a href="/my_study_sessions/<%=@study_session.id%>/edit"><input class="btn" type="button" value="Edit"></a>
 
-<form action="/study_sessions/<%=@study_session.id%>" method="POST">
+<form action="/my_study_sessions/<%=@study_session.id%>" method="POST">
   <input type="hidden" id="hidden" name="_method" value="delete">
   <input type="submit" id="submit" value="Delete">
 </form>
 
+<a href="/my_study_sessions/new"><input class="btn" type="button" value="New Study Session"></a>
+<br>
 <a href="/my_study_sessions"><input class="btn" type="button" value="Return to All Study Sessions"></a>
