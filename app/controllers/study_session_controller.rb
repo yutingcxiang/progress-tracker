@@ -56,7 +56,6 @@ class StudySessionController < ApplicationController
       redirect "/my_study_sessions/#{@study_session.id}/edit"
     else
       @study_session = StudySession.find_by(id: params[:id])
-      binding.pry
       if params[:id].to_i == current_study_session
         @study_session.update(date: params[:date], hours: params[:hours], summary: params[:summary])
         @study_session.student = current_student
