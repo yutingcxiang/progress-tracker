@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
 
     def current_study_session
       if session[:study_session_id]
-        session[:study_session_id]
+        StudySession.find_by(id: params[:id])
       end
     end
 	end
