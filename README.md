@@ -2,6 +2,10 @@
 
 For learn.co students to track their hours and completed work for each of their study sessions throughout their curriculum.
 
+## Demo
+
+![progress-tracker demo](https://media.giphy.com/media/k56JBDEokdyY5BeYtS/giphy.gif)
+
 ## Installation
 
 Run this command:
