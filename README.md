@@ -15,10 +15,10 @@ Run this command:
 ## Usage
 
 To use this app, run: 
-    ```
+
     $ bundle install
     $ shotgun
-    ```
+    
 
 ## Development
 
