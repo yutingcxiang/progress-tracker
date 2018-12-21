@@ -12,10 +12,6 @@ Run this command:
 
     $ bundle install
 
-Or install it yourself as:
-
-    $ shotgun
-
 ## Usage
 
 To use this app, just clone, run rake db:migrate and then run shotgun.
