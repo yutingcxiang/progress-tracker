@@ -15,8 +15,8 @@ Run this command:
 ## Usage
 
 To use this app, run: 
-    $ rake db:migrate
-    $ shotgun
+    ```$ bundle install
+    $ shotgun```
 
 ## Development
 
