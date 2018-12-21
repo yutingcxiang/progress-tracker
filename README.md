@@ -14,7 +14,9 @@ Run this command:
 
 ## Usage
 
-To use this app, just clone, run rake db:migrate and then run shotgun.
+To use this app, run: 
+    $ rake db:migrate
+    $ shotgun
 
 ## Development
 
